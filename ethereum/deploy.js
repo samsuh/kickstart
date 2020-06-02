@@ -1,10 +1,11 @@
+require("dotenv").config();
 const HDWalletProvider = require("truffle-hdwallet-provider");
 const Web3 = require("web3");
 const compiledFactory = require("./build/CampaignFactory.json");
 
 const provider = new HDWalletProvider(
-  "wreck method very basket icon skate clarify donate staff forget address wise",
-  "https://rinkeby.infura.io/v3/aaa697ff9b38438585c95dc555c75afa"
+  process.env.MNEUMONIC,
+  process.env.INFURA_API
 );
 
 const web3 = new Web3(provider);

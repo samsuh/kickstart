@@ -8,6 +8,7 @@ let web3;
 //check to see if running in browser, then check if user is in window and running metamask
 // if both exist, hijack metamask's and use it
 if (typeof window !== "undefined" && typeof window.web3 != "undefined") {
+  window.ethereum.enable();
   web3 = new Web3(window.web3.currentProvider);
 } else {
   //either running on server or user not running metamask
